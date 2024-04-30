@@ -1,4 +1,4 @@
-async function getUTCTime() {
+function getUTCTime() {
   return new Intl.DateTimeFormat("en-US", {
     timeZone: "UTC",
     hour: "numeric",
@@ -8,6 +8,6 @@ async function getUTCTime() {
   }).format(new Date());
 }
 
-console.log(await getUTCTime());
+console.log(getUTCTime());
 
 export {};
