@@ -1,8 +1,12 @@
 import { parse } from "node-html-parser";
 
 async function getUTCTime() {
-  const date = new Date();
-  return date.toUTCString();
+  return new Intl.DateTimeFormat("en-US", {
+    timeZone: "UTC",
+    hour: "numeric",
+    minute: "numeric",
+    second: "numeric",
+  }).format(new Date());
 
   // const response = await fetch("https://time.is/UTC");
   // const html = await response.text();
@@ -13,4 +17,4 @@ async function getUTCTime() {
 
 console.log(await getUTCTime());
 
-export {}
+export {};
